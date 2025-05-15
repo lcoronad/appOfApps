@@ -25,9 +25,9 @@ mongodb:
   passwordKey: mongodb-root-password
 
 openAIRuntime:
-  url: https://vllm-predictor-{{ .Release.Namespace }}.{{ .Values.clusterDomain }}/v1
-  apikey: abc123
-  modelname: vllm
+  url: https://granite-3-8b-instruct-maas-apicast-production.apps.prod.rhoai.rh-aiservices-bu.com:443/v1
+  apikey: b5d2a9bf03d2f0cca98ba737548f721e
+  modelname: granite-3-8b-instruct
 
 route:
   # The timeout needs to be pretty high if there are no GPUs available

@@ -2,7 +2,7 @@ name: composer-ai
 namespacePrefix: composer-ai-
 # Git Repository for the ArgoCD Application
 repo:
-  url: https://github.com/redhat-composer-ai/appOfApps.git # Change This on Fork
+  url: https://github.com/lcoronad/appOfApps.git # Change This on Fork
   branch: main
 # Namespace for the ArgoCD Application
 gitops:
@@ -14,6 +14,7 @@ defaultValuesFile: values.yaml
 # Applications to be deployed
 applications:
   vllm-model:
+    enabled: false
     sources:
       - repoURL: https://redhat-ai-services.github.io/helm-charts/
         chart: vllm-kserve
