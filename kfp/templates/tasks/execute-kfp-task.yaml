@@ -18,6 +18,18 @@ spec:
     - name: KUBEFLOW_ENDPOINT
       description: The endpoint URL for Kubeflow
       default: "https://ds-pipeline-dspa:8443"
+    - name: PRODUCT_LOAD
+      description: Product to load
+      default: "red_hat_openshift_ai_self-managed"
+    - name: PRODUCT_FULL_NAME
+      description: Product full name to load
+      default: "Red Hat OpenShift AI Self-Managed"
+    - name: PRODUCT_VERSION
+      description: Product version to load
+      default: "2.14"
+    - name: PRODUCT_LANG
+      description: Product lang to load
+      default: "en-US"
   steps:
     - name: execute-python
       image: $(inputs.params.IMAGE):$(inputs.params.TAG)
@@ -28,5 +40,13 @@ spec:
           value: $(inputs.params.IMAGE):$(inputs.params.TAG)
         - name: CLUSTER_DOMAIN
           value: '{{ $.Values.clusterDomain }}'
+        - name: PRODUCT_LOAD
+          value: $(inputs.params.PRODUCT_LOAD)
+        - name: PRODUCT_FULL_NAME
+          value: $(inputs.params.PRODUCT_FULL_NAME)
+        - name: PRODUCT_VERSION
+          value: $(inputs.params.PRODUCT_VERSION)
+        - name: PRODUCT_LANG
+          value: $(inputs.params.PRODUCT_LANG)
       script: |
         python $(inputs.params.SCRIPT)
