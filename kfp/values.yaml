@@ -15,7 +15,7 @@ defaults:
     url: 'https://github.com/redhat-composer-ai/data-ingestion'
     revision: 'main'
     path: 'kfp/redhat-product-documentation-ingestor'
-    script: 'ingestion-pipeline-elastic.py'
+    script: 'ingestion-pipeline-local.py'
     website_ingestion_path: 'kfp/website-ingestor'
     website_ingestion_script: 'website-ingestion-pipeline.py'
     website_ingestion_url: 'https://www.redhat.com/en/topics/containers/red-hat-openshift-okd'
