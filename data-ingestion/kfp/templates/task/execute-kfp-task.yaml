@@ -18,6 +18,13 @@ spec:
     - name: KUBEFLOW_ENDPOINT
       description: The endpoint URL for Kubeflow
       default: "https://ds-pipeline-dspa:8443"
+  resources:
+    requests:
+      cpu: "1"
+      memory: "1Gi"
+    limits:
+      cpu: "2"
+      memory: "2Gi"
   steps:
     - name: execute-python
       image: $(inputs.params.IMAGE):$(inputs.params.TAG)
